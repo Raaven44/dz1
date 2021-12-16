@@ -38,26 +38,14 @@ namespace ConsoleApp5
         }
         public static Drobi operator +(Drobi odin, Drobi dva)
         {
-            if (odin.znaminatel!=dva.znaminatel)
-            {
-                odin.chislitel = odin.chislitel * dva.znaminatel;
-                odin.znaminatel = odin.znaminatel * dva.znaminatel;
-                dva.chislitel = dva.chislitel * odin.znaminatel;
-                dva.znaminatel = dva.znaminatel * odin.znaminatel;
-            }
-            return new Drobi(odin.chislitel + dva.chislitel, odin.znaminatel);
+            
+            return new Drobi(odin.chislitel*dva.znaminatel + dva.chislitel*odin.znaminatel, odin.znaminatel*dva.znaminatel);
 
         }
         public static Drobi operator -(Drobi odin, Drobi dva)
         {
-            if (odin.znaminatel != dva.znaminatel)
-            {
-                odin.chislitel = odin.chislitel * dva.znaminatel;
-                odin.znaminatel = odin.znaminatel * dva.znaminatel;
-                dva.chislitel = dva.chislitel * odin.znaminatel;
-                dva.znaminatel = dva.znaminatel * odin.znaminatel;
-            }
-            return new Drobi(odin.chislitel - dva.chislitel, odin.znaminatel);
+            
+            return new Drobi(odin.chislitel * dva.znaminatel - dva.chislitel * odin.znaminatel, odin.znaminatel * dva.znaminatel);
 
         }
         public static Drobi operator /(Drobi odin, Drobi dva)
